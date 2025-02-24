@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fafaf7; /* Теплый светлый фон */
+  --foreground: #2a2a2a; /* Темно-серый цвет текста для комфорта */
+  --primary: #007acc; /* Спокойный синий */
+  --primary-hover: #005f99;
+  --secondary: #ffffff; /* Белый для карточек */
+  --border-color: #e0e0e0; /* Светло-серый для границ */
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+//@media (prefers-color-scheme: dark) {
+//  :root {
+//    --background: #1a1a1a;
+//    --foreground: #e0e0e0;
+//    --primary: #4da8da;
+//    --primary-hover: #3b87b5;
+//    --secondary: #222;
+//    --border-color: #444;
+//    --shadow: rgba(0, 0, 0, 0.3);
+//  }
+//}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Улучшенные стили для контейнеров */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+  background: var(--secondary);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+/* Стили для кнопок */
+.button {
+  display: inline-block;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background: var(--primary);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* Улучшенные стили для заголовков */
+h1, h2, h3, h4 {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+h1 {
+  font-size: 34px;
+  color: var(--primary);
+}
+
+h2 {
+  font-size: 28px;
+  color: var(--foreground);
+}
+
+h3 {
+  font-size: 24px;
+}
+
+/* Улучшенные стили для текста */
+p {
+  margin-bottom: 14px;
+  color: #444;
+}
+
+/* Поля ввода */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 122, 204, 0.3);
+}
+
+/* Карточки */
+.card {
+  background: var(--secondary);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+/* Улучшенные стили ссылок */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
