@@ -1,12 +1,13 @@
-import Link from "next/link";
+import Banner from '@/components/Banner'
+import CategoryList from '@/components/CategoryList'
+import Testimonials from '@/components/Testimonials'
 
 export default function Home() {
-  return (
-      <div className="container mx-auto p-4">
-        <h1 className="text-3xl font-bold mb-4">Вітаємо в українському магазині!</h1>
-        <Link href="/products" className="text-blue-500 hover:underline">
-          Переглянути товари
-        </Link>
-      </div>
-  );
+    return (
+        <>
+            <Banner />
+            <CategoryList />
+            <Testimonials />
+        </>
+    )
 }
