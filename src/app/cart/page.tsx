@@ -1,7 +1,7 @@
 'use client'
 
 import { useCart } from '@/context/CartContext'
-import CartItem from './CartItem'
+import CartList from '@/app/cart/CartList'
 
 export default function CartPage() {
     const { cart } = useCart()
@@ -12,7 +12,7 @@ export default function CartPage() {
             {cart.length === 0 ? (
                 <p className="text-gray-600">Корзина пуста</p>
             ) : (
-                cart.map((item) => <CartItem key={item.id} item={item} />)
+                <CartList />
             )}
         </div>
     )

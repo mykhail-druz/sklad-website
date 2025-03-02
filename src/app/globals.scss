@@ -12,18 +12,6 @@
   --shadow: rgba(0, 0, 0, 0.08);
 }
 
-//@media (prefers-color-scheme: dark) {
-//  :root {
-//    --background: #1a1a1a;
-//    --foreground: #e0e0e0;
-//    --primary: #4da8da;
-//    --primary-hover: #3b87b5;
-//    --secondary: #222;
-//    --border-color: #444;
-//    --shadow: rgba(0, 0, 0, 0.3);
-//  }
-//}
-
 body {
   color: var(--foreground);
   background-color: var(--background);

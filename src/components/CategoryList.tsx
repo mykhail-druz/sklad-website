@@ -18,15 +18,15 @@ export default async function CategoryList() {
     const subcategories = categories.filter((c) => c.parent_id !== null)
 
     return (
-        <section className="container mx-auto py-10">
+        <section className=" mx-auto py-10 w-full max-w-[1440px]">
             <h2 className="text-2xl font-bold mb-6">Популярні категорії</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 text-center">
                 {mainCategories.map(({ id, name, slug }) => (
                     <div
                         key={id}
                         className="bg-gray-100 rounded-lg shadow-md p-4"
                     >
-                        <Link href={`/category/${slug}`}>
+                        <Link href={`/categories/${slug}`}>
                             <p className="text-lg font-semibold cursor-pointer hover:text-blue-500 transition">
                                 {name}
                             </p>
@@ -39,7 +39,7 @@ export default async function CategoryList() {
                                 .map(({ name, slug }) => (
                                     <Link
                                         key={slug}
-                                        href={`/category/${slug}`}
+                                        href={`/categories/${slug}`}
                                         className="block hover:text-blue-500 transition"
                                     >
                                         {name}

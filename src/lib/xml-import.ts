@@ -30,7 +30,7 @@
 //         >()
 //         const categoriesSet = new Set<string>() // Используем Set для удаления дублей
 //
-//         result.yml_catalog.shop[0].categories[0].category.forEach(
+//         result.yml_catalog.shop[0].categories[0].categories.forEach(
 //             (cat: any) => {
 //                 const id = cat.$.id
 //                 const name = cat._
@@ -81,8 +81,8 @@
 //             insertedCategories.map((c) => [c.slug, c.id])
 //         )
 //
-//         for (const category of insertedCategories) {
-//             const originalCategory = categoriesMap.get(category.slug)
+//         for (const categories of insertedCategories) {
+//             const originalCategory = categoriesMap.get(categories.slug)
 //             if (originalCategory && originalCategory.parentId) {
 //                 const newParentId =
 //                     slugToIdMap[
@@ -92,7 +92,7 @@
 //                     await supabase
 //                         .from('categories')
 //                         .update({ parent_id: newParentId })
-//                         .eq('id', category.id)
+//                         .eq('id', categories.id)
 //                 }
 //             }
 //         }

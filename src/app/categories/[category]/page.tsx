@@ -38,7 +38,7 @@ export default async function CategoryPage({ params }: PageProps) {
                     {subcategories.map(({ name, slug }) => (
                         <Link
                             key={slug}
-                            href={`/category/${categorySlug}/${slug}`}
+                            href={`/categories/${categorySlug}/${slug}`}
                         >
                             <div className="p-5 bg-white rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer text-center border border-gray-200">
                                 <p className="text-lg font-medium text-gray-800">

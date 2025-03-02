@@ -11,7 +11,7 @@ export default function CartIcon() {
     return (
         <Link href="/cart" className="relative flex flex-row items-center">
             {/* 🛒 Иконка корзины */}
-            <CiShoppingCart className="h-8 w-8 text-black" />
+            <CiShoppingCart className="h-8 w-8 text-black hover:text-blue-600 transition" />
 
             {/* 🔴 Число товаров в корзине */}
             {totalItems > 0 && (

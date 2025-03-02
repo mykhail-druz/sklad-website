@@ -19,7 +19,9 @@ export default function RootLayout({
             <body>
                 <CartProvider>
                     <Header />
-                    <main className="w-full mx-auto p-4">{children}</main>
+                    <main className="w-full min-h-[70vh] mx-auto">
+                        {children}
+                    </main>
                     <Footer />
                 </CartProvider>
             </body>

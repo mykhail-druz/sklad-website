@@ -1,20 +1,36 @@
 'use client'
 
 import { useCart } from '@/context/CartContext'
-import { addToCart, getCart } from '@/lib/cartApi'
 
-export default function CartButton({ productId }: { productId: string }) {
-    const { setCart } = useCart()
+interface CartButtonProps {
+    productId: string
+    title: string
+    imageUrl: string
+    price: number
+}
 
-    async function handleAdd() {
-        await addToCart(productId)
-        setCart(await getCart())
+export default function CartButton({
+    productId,
+    title,
+    imageUrl,
+    price,
+}: CartButtonProps) {
+    const { addToCart } = useCart()
+
+    const handleAdd = () => {
+        addToCart({
+            product_id: productId,
+            title,
+            image_url: imageUrl,
+            price,
+            quantity: 1,
+        })
     }
 
     return (
         <button
-            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700"
             onClick={handleAdd}
+            className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-200 mt-2 w-full"
         >
             Добавить в корзину
         </button>

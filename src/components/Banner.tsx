@@ -1,11 +1,19 @@
+'use client'
+import Particles from '@/components/Particles/Particles'
+
 export default function Banner() {
     return (
-        <section className="bg-blue-600 text-white py-16 text-center">
-            <h1 className="text-4xl font-bold mb-4">Сезонні знижки до -50%!</h1>
-            <p className="text-lg">Не пропустіть вигідні пропозиції.</p>
-            <button className="mt-4 bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold">
-                Переглянути товари
-            </button>
+        <section className="relative rounded-3xl w-full max-w-[1440px] mx-auto h-[600px] bg-black">
+            <Particles
+                particleColors={['#ffffff', '#ffffff']}
+                particleCount={200}
+                particleSpread={10}
+                speed={0.1}
+                particleBaseSize={100}
+                moveParticlesOnHover={true}
+                alphaParticles={false}
+                disableRotation={false}
+            />
         </section>
     )
 }
