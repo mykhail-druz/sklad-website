@@ -6,19 +6,18 @@ import { useRouter } from 'next/navigation'
 import CartIcon from '@/components/CartIcon'
 import { CiLogin, CiLogout } from 'react-icons/ci'
 import { supabase } from '@/lib/supabaseClient'
-import FavoriteIcon from '@/components/FavoriteIcon' // Импортируем новый компонент
+import FavoriteIcon from '@/components/FavoriteIcon'
+import { Tooltip } from '@heroui/tooltip'
 
 export default function Header() {
     const [user, setUser] = useState<null | { id: string }>(null)
     const router = useRouter()
 
     useEffect(() => {
-        // Получаем текущую сессию при монтировании
         supabase.auth.getUser().then(({ data: { user } }) => {
             setUser(user)
         })
 
-        // Подписываемся на изменения аутентификации
         const { data: authListener } = supabase.auth.onAuthStateChange(
             (_event, session) => {
                 setUser(session?.user ?? null)
@@ -51,7 +50,10 @@ export default function Header() {
 
                 <nav className="flex items-center space-x-4">
                     <FavoriteIcon />
-                    <CartIcon />
+                    <Tooltip content="Корзина">
+                        <CartIcon />
+                    </Tooltip>
+
                     <div className="flex items-center justify-center text-black hover:text-blue-600 transition">
                         {user ? (
                             <button onClick={handleSignOut}>

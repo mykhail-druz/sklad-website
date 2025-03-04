@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #fafaf7; /* Теплый светлый фон */
+  --background: #ffffff; /* Теплый светлый фон */
   --foreground: #2a2a2a; /* Темно-серый цвет текста для комфорта */
   --primary: #007acc; /* Спокойный синий */
   --primary-hover: #005f99;
@@ -33,44 +33,12 @@ body {
   border: 1px solid var(--border-color);
 }
 
-/* Стили для кнопок */
-.button {
-  display: inline-block;
-  padding: 12px 18px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #fff;
-  background: var(--primary);
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
 
 .button:hover {
   background: var(--primary-hover);
   transform: translateY(-2px);
 }
 
-/* Улучшенные стили для заголовков */
-h1, h2, h3, h4 {
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-h1 {
-  font-size: 34px;
-  color: var(--primary);
-}
-
-h2 {
-  font-size: 28px;
-  color: var(--foreground);
-}
-
-h3 {
-  font-size: 24px;
-}
 
 /* Улучшенные стили для текста */
 p {
@@ -95,14 +63,7 @@ input:focus, textarea:focus {
   box-shadow: 0 0 5px rgba(0, 122, 204, 0.3);
 }
 
-/* Карточки */
-.card {
-  background: var(--secondary);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px var(--shadow);
-  border: 1px solid var(--border-color);
-}
+
 
 /* Улучшенные стили ссылок */
 a {
@@ -113,4 +74,23 @@ a {
 
 a:hover {
   color: var(--primary-hover);
+}
+
+@layer components {
+
+  .section-title {
+    @apply text-center text-3xl md:text-[54px] md:leading-[60px] font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text
+  }
+
+  .section-description {
+    @apply text-center text-[22px] leading-[30px] tracking-tight text-[#010D3E]
+  }
+
+  .section-heading {
+    @apply max-w-[540px] mx-auto
+  }
+
+  .card {
+    @apply p-10 border border-[#222222]/10 rounded-3xl shadow-[0_7px_14px_#EAEAEA] max-w-xs w-full
+  }
 }
