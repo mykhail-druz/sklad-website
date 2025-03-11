@@ -1,11 +1,11 @@
 'use client'
 
-import { useCart } from '@/context/CartContext'
 import Image from 'next/image'
 import Counter from '@/components/Counter/Counter'
+import { useAppDispatch } from '@/hooks/useAppDispatch'
+import { removeItem, updateItemQuantity } from '@/store/slices/cartSlice'
 
 interface CartItemProps {
-    id: string
     productId: string
     title: string
     imageUrl: string
@@ -20,17 +20,27 @@ export default function CartItem({
     price,
     quantity,
 }: CartItemProps) {
-    const { updateQuantity, removeItem } = useCart()
+    const dispatch = useAppDispatch()
 
-    // Обработчики для изменения количества
+    // Обработчики изменения количества
     const handleDecrease = () => {
         if (quantity > 1) {
-            updateQuantity(productId, quantity - 1)
+            dispatch(
+                updateItemQuantity({
+                    product_id: productId,
+                    quantity: quantity - 1,
+                })
+            )
         }
     }
 
     const handleIncrease = () => {
-        updateQuantity(productId, quantity + 1)
+        dispatch(
+            updateItemQuantity({
+                product_id: productId,
+                quantity: quantity + 1,
+            })
+        )
     }
 
     return (
@@ -47,7 +57,7 @@ export default function CartItem({
                     <h3 className="text-lg font-semibold text-gray-800">
                         {title}
                     </h3>
-                    <p className="text-gray-600">Цена: {price} $.</p>
+                    <p className="text-gray-600">Ціна: {price} грн</p>
                 </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -60,9 +70,9 @@ export default function CartItem({
                     </button>
                     <Counter
                         value={quantity}
-                        fontSize={20} // Уменьшаем размер для компактности
+                        fontSize={20}
                         padding={1}
-                        places={[10, 1]} // Две цифры для количества (до 99)
+                        places={[10, 1]}
                         gap={4}
                         textColor="black"
                         fontWeight={700}
@@ -78,10 +88,10 @@ export default function CartItem({
                     </button>
                 </div>
                 <button
-                    onClick={() => removeItem(productId)}
+                    onClick={() => dispatch(removeItem(productId))}
                     className="text-red-500 hover:text-red-700"
                 >
-                    Удалить
+                    Видалити
                 </button>
             </div>
         </div>

@@ -16,7 +16,7 @@ export default async function SubcategoryPage({ params }: PageProps) {
     }
 
     return (
-        <div className="container mx-auto p-4">
+        <div className="max-w-[1440px] mx-auto py-4">
             <h1 className="text-3xl font-bold mb-6">{name}</h1>
             <ProductList products={products} />
         </div>

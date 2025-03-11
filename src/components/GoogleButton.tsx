@@ -1,8 +1,9 @@
 import Google from '@/assets/google-logo.svg'
+import { Spinner } from '@heroui/spinner'
 
 interface GoogleButtonProps {
     onClick: () => Promise<void>
-    loading: boolean
+    loading?: boolean
     disabled?: boolean
 }
 
@@ -17,10 +18,14 @@ export default function GoogleButton({
             disabled={loading || disabled}
             className="w-full rounded-md flex items-center justify-center bg-gray-200 border-gray-300 border"
         >
-            <div className="flex flex-row space-x-1 items-center justify-center text-center py-2">
-                <Google className="w-6 h-6" />
-                <p className="my-auto text-black">Google</p>
-            </div>
+            {loading ? (
+                <Spinner color="default" />
+            ) : (
+                <div className="flex flex-row space-x-1 items-center justify-center text-center py-2">
+                    <Google className="w-6 h-6" />
+                    <p className="my-auto text-black">Google</p>
+                </div>
+            )}
         </button>
     )
 }

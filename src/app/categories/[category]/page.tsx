@@ -29,7 +29,7 @@ export default async function CategoryPage({ params }: PageProps) {
         .eq('parent_id', category.id)
 
     return (
-        <div className="container mx-auto p-4">
+        <div className="max-w-[1440px] mx-auto py-4">
             <h1 className="text-3xl font-bold mb-6">{category.name}</h1>
             {subcategoryError || !subcategories?.length ? (
                 <p className="text-gray-600">Підкатегорії не знайдено</p>

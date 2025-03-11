@@ -1,19 +1,22 @@
 'use client'
 
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import CartIcon from '@/components/CartIcon'
 import { CiLogin, CiLogout } from 'react-icons/ci'
 import { supabase } from '@/lib/supabaseClient'
 import FavoriteIcon from '@/components/FavoriteIcon'
-import { Tooltip } from '@heroui/tooltip'
+import { useAppDispatch } from '@/hooks/useAppDispatch'
+import { clearCredentials } from '@/store/slices/authSlice'
 
 export default function Header() {
     const [user, setUser] = useState<null | { id: string }>(null)
     const router = useRouter()
+    const dispatch = useAppDispatch()
 
     useEffect(() => {
+        // Получаем текущего пользователя при монтировании
         supabase.auth.getUser().then(({ data: { user } }) => {
             setUser(user)
         })
@@ -21,22 +24,27 @@ export default function Header() {
         const { data: authListener } = supabase.auth.onAuthStateChange(
             (_event, session) => {
                 setUser(session?.user ?? null)
+                // Если сессия пропала, обновляем и Redux
+                if (!session?.user) {
+                    dispatch(clearCredentials())
+                }
             }
         )
 
         return () => {
             authListener.subscription.unsubscribe()
         }
-    }, [])
+    }, [dispatch])
 
     async function handleSignOut() {
         await supabase.auth.signOut()
         setUser(null)
+        dispatch(clearCredentials()) // Сбрасываем состояние в Redux
         router.push('/')
     }
 
     return (
-        <header className="pt-4 pb-8">
+        <header className="p-8">
             <div className="mx-auto flex justify-between items-center max-w-[1440px] gap-8">
                 <Link href="/" className="text-2xl font-bold text-black">
                     Мій Магазин
@@ -50,10 +58,7 @@ export default function Header() {
 
                 <nav className="flex items-center space-x-4">
                     <FavoriteIcon />
-                    <Tooltip content="Корзина">
-                        <CartIcon />
-                    </Tooltip>
-
+                    <CartIcon />
                     <div className="flex items-center justify-center text-black hover:text-blue-600 transition">
                         {user ? (
                             <button onClick={handleSignOut}>

@@ -36,7 +36,7 @@ export default function ProductCard({ product }: { product: Product }) {
                     {product.description}
                 </p>
                 <p className="text-lg font-semibold text-blue-600 mt-auto">
-                    {product.price} $
+                    {product.price} грн
                 </p>
             </Link>
             <CartButton
