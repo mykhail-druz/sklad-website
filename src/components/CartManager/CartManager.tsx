@@ -31,7 +31,7 @@ export default function CartManager() {
                 dispatch(setCartItems(JSON.parse(stored)))
             }
         }
-    }, [dispatch, isLoggedIn, cartItems])
+    }, [dispatch, isLoggedIn])
 
     // Синхронизация корзины: если пользователь авторизован, отправляем изменения на сервер
     useEffect(() => {

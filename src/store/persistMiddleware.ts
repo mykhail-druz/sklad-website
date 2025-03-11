@@ -4,10 +4,17 @@ export const persistAuthMiddleware: Middleware =
     (store) => (next) => (action) => {
         const result = next(action)
 
-        // Сохраняем состояние auth в localStorage (проверяем, что window доступно)
+        // Сохраняем состояние auth в localStorage, только если оно изменилось
         if (typeof window !== 'undefined') {
             const state = store.getState()
-            localStorage.setItem('auth', JSON.stringify(state.auth))
+            const prevAuth = localStorage.getItem('auth')
+
+            const currentAuth = JSON.stringify(state.auth)
+
+            // Проверяем, изменилось ли состояние auth
+            if (prevAuth !== currentAuth) {
+                localStorage.setItem('auth', currentAuth)
+            }
         }
 
         return result

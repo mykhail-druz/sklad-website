@@ -1555,7 +1555,7 @@
 
 "@heroui/react@^2.7.4":
   version "2.7.4"
-  resolved "https://registry.yarnpkg.com/@heroui/react/-/react-2.7.4.tgz#5895ef3946a414d67dacddfa5d3c8da6f6a16a35"
+  resolved "https://registry.npmjs.org/@heroui/react/-/react-2.7.4.tgz"
   integrity sha512-w5RZxxx0DHxciLRsJ2v8oPeHIc/FH1sVuWUGM9Vjg5/0TZoZNYryDtsubMJLKAe3Yu010kxY9qOdR8GA3f25eg==
   dependencies:
     "@heroui/accordion" "2.2.12"
@@ -3333,7 +3333,7 @@
 
 "@reduxjs/toolkit@^2.6.0":
   version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@reduxjs/toolkit/-/toolkit-2.6.0.tgz#fb4fdd0971162a1f18a6c52899fdfd9c77674e67"
+  resolved "https://registry.npmjs.org/@reduxjs/toolkit/-/toolkit-2.6.0.tgz"
   integrity sha512-mWJCYpewLRyTuuzRSEC/IwIBBkYg2dKtQas8mty5MaV2iXzcmicS3gW554FDeOvLnY3x13NIk8MB1e8wHO7rqQ==
   dependencies:
     immer "^10.0.3"
@@ -3726,7 +3726,7 @@
 
 "@types/use-sync-external-store@^0.0.6":
   version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@types/use-sync-external-store/-/use-sync-external-store-0.0.6.tgz#60be8d21baab8c305132eb9cb912ed497852aadc"
+  resolved "https://registry.npmjs.org/@types/use-sync-external-store/-/use-sync-external-store-0.0.6.tgz"
   integrity sha512-zFDAD+tlpf2r4asuHEj0XH6pY6i0g5NeAHPn+15wk3BV6JA69eERFXC1gyGThDkVa1zCyKr5jox1+2LbV/AMLg==
 
 "@types/webxr@*":
@@ -5198,7 +5198,7 @@ foreground-child@^3.1.0:
 
 framer-motion@^12.4.9:
   version "12.4.9"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-12.4.9.tgz#2c4ccb7173ceca6a22e92d30bbffa4a6e74cf49b"
+  resolved "https://registry.npmjs.org/framer-motion/-/framer-motion-12.4.9.tgz"
   integrity sha512-c+nDhfiNUwi8G4BrhrP2hjPsDHzIKRbUhDlcK7oC5kXY4QK1IrT/kuhY4BgK6h2ujDrZ8ocvFrG2X8+b1m/MkQ==
   dependencies:
     motion-dom "^12.4.5"
@@ -5391,7 +5391,7 @@ ignore@^5.2.0, ignore@^5.3.1:
 
 immer@^10.0.3:
   version "10.1.1"
-  resolved "https://registry.yarnpkg.com/immer/-/immer-10.1.1.tgz#206f344ea372d8ea176891545ee53ccc062db7bc"
+  resolved "https://registry.npmjs.org/immer/-/immer-10.1.1.tgz"
   integrity sha512-s2MPrmjovJcoMaHtx6K11Ra7oD05NT97w1IC5zpMkT6Atjr7H8LjaDd81iIxUYpMKSRRNMJE703M1Fhr/TctHw==
 
 immutable@^5.0.2:
@@ -5876,6 +5876,11 @@ lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://registry.npmjs.org/lodash.merge/-/lodash.merge-4.6.2.tgz"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
+
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.npmjs.org/lodash.throttle/-/lodash.throttle-4.1.1.tgz"
+  integrity sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==
 
 loose-envify@^1.4.0:
   version "1.4.0"
@@ -6428,7 +6433,7 @@ react-is@^16.13.1:
 
 react-redux@^9.2.0:
   version "9.2.0"
-  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-9.2.0.tgz#96c3ab23fb9a3af2cb4654be4b51c989e32366f5"
+  resolved "https://registry.npmjs.org/react-redux/-/react-redux-9.2.0.tgz"
   integrity sha512-ROY9fvHhwOD9ySfrF0wmvu//bKCQ6AeZZq1nJNtbDC+kk5DuSuNX/n6YWYF/SYy7bSba4D4FSz8DJeKY/S/r+g==
   dependencies:
     "@types/use-sync-external-store" "^0.0.6"
@@ -6469,12 +6474,12 @@ readdirp@~3.6.0:
 
 redux-thunk@^3.1.0:
   version "3.1.0"
-  resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-3.1.0.tgz#94aa6e04977c30e14e892eae84978c1af6058ff3"
+  resolved "https://registry.npmjs.org/redux-thunk/-/redux-thunk-3.1.0.tgz"
   integrity sha512-NW2r5T6ksUKXCabzhL9z+h206HQw/NJkcLm1GPImRQ8IzfXwRGqjVhKJGauHirT0DAuyy6hjdnMZaRoAcy0Klw==
 
 redux@^5.0.1:
   version "5.0.1"
-  resolved "https://registry.yarnpkg.com/redux/-/redux-5.0.1.tgz#97fa26881ce5746500125585d5642c77b6e9447b"
+  resolved "https://registry.npmjs.org/redux/-/redux-5.0.1.tgz"
   integrity sha512-M9/ELqF6fy8FwmkpnF0S3YKOqMyoWJ4+CS5Efg2ct3oY9daQvd/Pc71FpGZsVsbl3Cpb+IIcjBDUnnyBdQbq4w==
 
 reflect.getprototypeof@^1.0.6, reflect.getprototypeof@^1.0.9:
@@ -6553,7 +6558,7 @@ regjsparser@^0.12.0:
 
 reselect@^5.1.0:
   version "5.1.1"
-  resolved "https://registry.yarnpkg.com/reselect/-/reselect-5.1.1.tgz#c766b1eb5d558291e5e550298adb0becc24bb72e"
+  resolved "https://registry.npmjs.org/reselect/-/reselect-5.1.1.tgz"
   integrity sha512-K/BG6eIky/SBpzfHZv/dd+9JBFiS4SWV7FIujVyJRux6e45+73RaUHXLmIR1f7WOMaQ0U1km6qwklRQxpJJY0w==
 
 resolve-from@^3.0.0:
