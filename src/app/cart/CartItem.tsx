@@ -3,7 +3,10 @@
 import Image from 'next/image'
 import Counter from '@/components/Counter/Counter'
 import { useAppDispatch } from '@/hooks/useAppDispatch'
-import { removeItem, updateItemQuantity } from '@/store/slices/cartSlice'
+import {
+    removeItemFromSupabase,
+    updateItemQuantity,
+} from '@/store/slices/cartSlice'
 
 interface CartItemProps {
     productId: string
@@ -41,6 +44,10 @@ export default function CartItem({
                 quantity: quantity + 1,
             })
         )
+    }
+
+    const handleRemove = () => {
+        dispatch(removeItemFromSupabase(productId))
     }
 
     return (
@@ -88,7 +95,7 @@ export default function CartItem({
                     </button>
                 </div>
                 <button
-                    onClick={() => dispatch(removeItem(productId))}
+                    onClick={handleRemove}
                     className="text-red-500 hover:text-red-700"
                 >
                     Видалити

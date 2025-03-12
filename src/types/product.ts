@@ -1,9 +1,12 @@
+// types/product.ts
 export interface Product {
     id: string
-    title: string
+    name: string
     price: number
-    image_url: string
     description: string
-    category?: string
-    created_at?: string
+    category_id?: string
+    product_images?: {
+        id: string
+        url: string
+    }[]
 }

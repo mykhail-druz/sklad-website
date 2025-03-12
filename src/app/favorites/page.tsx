@@ -26,7 +26,7 @@ export default function Favorites() {
 
             try {
                 const { data, error } = await supabase
-                    .from('favorites')
+                    .from('wishlist_items')
                     .select('product_id')
                     .eq('user_id', user.id)
 
@@ -41,7 +41,7 @@ export default function Favorites() {
                 )
                 const { data: products, error: productsError } = await supabase
                     .from('products')
-                    .select('id, title, price, image_url, description') // Явно указываем поля
+                    .select('id, name, price, image_url, description') // Явно указываем поля
                 // .in('id', productIds); // Уберите, если не фильтруете
 
                 if (productsError) {

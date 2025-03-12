@@ -7,7 +7,7 @@ import { addItem } from '@/store/slices/cartSlice'
 
 interface CartButtonProps {
     productId: string
-    title: string
+    name: string
     imageUrl: string
     quantity?: number
     price: number
@@ -15,7 +15,7 @@ interface CartButtonProps {
 
 export default function CartButton({
     productId,
-    title,
+    name,
     imageUrl,
     quantity = 1,
     price,
@@ -27,7 +27,7 @@ export default function CartButton({
         dispatch(
             addItem({
                 product_id: productId,
-                title,
+                name,
                 image_url: imageUrl,
                 quantity,
                 price,

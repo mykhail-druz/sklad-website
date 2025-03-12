@@ -15,7 +15,7 @@ export default function FavoriteIcon() {
             } = await supabase.auth.getUser()
             if (user) {
                 const { data, error } = await supabase
-                    .from('favorites')
+                    .from('wishlist_items')
                     .select('id')
                     .eq('user_id', user.id)
 
@@ -31,7 +31,7 @@ export default function FavoriteIcon() {
 
         // Подписка на изменения в реальном времени (опционально)
         const subscription = supabase
-            .channel('favorites_changes')
+            .channel('wishlist_items')
             .on(
                 'postgres_changes',
                 { event: '*', schema: 'public', table: 'favorites' },

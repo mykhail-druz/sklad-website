@@ -21,7 +21,7 @@ export default function CartList() {
                         <CartItem
                             key={item.product_id}
                             productId={item.product_id}
-                            title={item.title}
+                            title={item.name}
                             imageUrl={item.image_url}
                             price={item.price}
                             quantity={item.quantity}

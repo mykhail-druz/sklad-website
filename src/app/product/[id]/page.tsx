@@ -28,14 +28,14 @@ export default async function ProductPage({
                 <div className="lg:w-1/2">
                     <Image
                         src={product.image_url}
-                        alt={product.title}
+                        alt={product.name}
                         width={800}
                         height={600}
                         className="w-full rounded-lg object-cover"
                     />
                 </div>
                 <div className="lg:w-1/2 relative">
-                    <h1 className="text-4xl font-bold mb-4">{product.title}</h1>
+                    <h1 className="text-4xl font-bold mb-4">{product.name}</h1>
                     <p className="text-2xl font-semibold text-blue-600 mb-4">
                         ${product.price}
                     </p>
@@ -43,7 +43,7 @@ export default async function ProductPage({
                         <div className="w-1/2">
                             <CartButton
                                 productId={product.id}
-                                title={product.title}
+                                name={product.name}
                                 imageUrl={product.image_url}
                                 price={product.price}
                             />
